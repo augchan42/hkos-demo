@@ -1,0 +1,17 @@
+{
+  "id": "41-19__skill",
+  "verse_key": "41-19",
+  "transition": "損 Sǔn (Decrease) -> 臨 Lín (Approach)",
+  "verse_zh": "元吉无咎，安寧不殆。",
+  "verse_en": "Supremely auspicious, without blame; peaceful and tranquil, free from peril.",
+  "approach": "skill",
+  "style": "ink-landscape",
+  "note": "Auspicious tone -> calm shanshui. All 7 composition rules woven in.",
+  "prompt": "Through a weathered stone gate, mossy steps descend like pale brushstrokes toward a still valley. In the midground a lone figure in a vermillion robe crosses a low bridge over calm water that mirrors the sky like spilled silver. Pine boughs frame the upper edge; terraced hills fade into amber dawn mist behind. Chinese ink painting.",
+  "model": "fal-ai/z-image/turbo",
+  "seed": 410419,
+  "returned_seed": 410419,
+  "image": "images/41-19__skill.png",
+  "source_url": "https://v3b.fal.media/files/b/0a9d1946/dXKZ2NO-alzwIE4xTcbxl_zXNMAn1p.png",
+  "generated_at": "2026-06-06T00:43:49"
+}

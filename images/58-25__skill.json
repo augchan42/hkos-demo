@@ -1,0 +1,17 @@
+{
+  "id": "58-25__skill",
+  "verse_key": "58-25",
+  "transition": "兌 Duì (Joyous Lake) -> 無妄 Wú Wàng (Innocence)",
+  "verse_zh": "結網得解，受福安坐，終无患禍。",
+  "verse_en": "The knotted net finds release; one receives blessing and sits at ease. In the end there is no trouble or calamity.",
+  "approach": "skill",
+  "style": "figures-in-mist",
+  "note": "Blessing and ease -> a human figure at rest. The released net becomes a calm detail, not the subject.",
+  "prompt": "Beneath a thatched eave framing the view, an old fisherman sits at ease on worn planks, a loosened net slack at his feet like unraveled ink threads. In the midground a calm inlet catches dawn light; a small boat drifts, its lantern a single amber spark. Reed banks and pale hills recede into mist beyond. Chinese ink painting.",
+  "model": "fal-ai/z-image/turbo",
+  "seed": 410419,
+  "returned_seed": 410419,
+  "image": "images/58-25__skill.png",
+  "source_url": "https://v3b.fal.media/files/b/0a9d194b/5dVSVB_8JHVf5hEMzU1b__HCmXCs24.png",
+  "generated_at": "2026-06-06T00:43:57"
+}

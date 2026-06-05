@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>verse-to-prompt — naive vs. skill</title>
+<style>
+  /* Sized for projection: nothing below text-xl (1.25rem). */
+  :root { --ink:#1c1a17; --paper:#f4f0e6; --muted:#6b6256; --accent:#b3402e; --line:#e2dccd; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+         font:1.25rem/1.6 ui-serif, Georgia, "Songti SC", serif; }
+  .wrap { max-width:1280px; margin:0 auto; padding:48px 30px 90px; }
+  header { text-align:center; margin-bottom:6px; }
+  h1 { font-size:2.5rem; margin:0 0 14px; line-height:1.2; }
+  .sub { color:var(--muted); font-size:1.25rem; max-width:1000px; margin:0 auto; }
+  .sub code { background:#ece5d3; padding:1px 6px; border-radius:4px; font-size:1.1rem; }
+  .verse-block { margin:56px 0 0; padding-top:38px; border-top:1px solid var(--line); }
+  .verse-head { text-align:center; margin-bottom:26px; }
+  .verse-head .zh { font-size:3rem; letter-spacing:.14em; line-height:1.3; }
+  .verse-head .en { color:var(--muted); font-style:italic; font-size:1.5rem; margin-top:10px; }
+  .verse-head .meta { color:var(--muted); font-size:1.25rem; margin-top:10px; letter-spacing:.03em; }
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden;
+          box-shadow:0 6px 20px rgba(40,30,20,.07); display:flex; flex-direction:column; }
+  .card img { width:100%; display:block; aspect-ratio:3/4; object-fit:cover; background:#eee; }
+  .tag { font-size:1.25rem; letter-spacing:.1em; text-transform:uppercase; padding:18px 22px 0; color:var(--muted); }
+  .card.skill .tag { color:var(--accent); }
+  .style { font-size:1.6rem; font-weight:600; padding:6px 22px 0; }
+  .note { font-size:1.25rem; color:var(--muted); padding:10px 22px 0; }
+  .prompt { font-size:1.25rem; color:#3a342c; padding:14px 22px 22px; line-height:1.55; margin-top:auto; }
+  .prompt .lbl { display:block; font-size:1.25rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .prompt .seed { color:var(--muted); font-size:1.25rem; margin-top:12px; }
+  .foot { text-align:center; color:var(--muted); font-size:1.25rem; margin-top:56px; }
+  @media (max-width:760px){ .pair{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>One verse, two prompts — the abstract case</h1>
+    <div class="sub">Inkstone <code>/verse-to-prompt</code> &middot; model <code>fal-ai/z-image/turbo</code> &middot; <strong>same model, same seed</strong> for every image — the prompt is the only variable</div>
+    <div class="sub" style="margin-top:8px">Naive prompts are <em>pretty but arbitrary</em>: they ignore the verse, latch onto stray words, or get the tone backwards. The skill maps tone&rarr;style and forces a faithful, composed scene.</div>
+  </header>
+  <div id="root"></div>
+  <div class="foot">Every card is generated from <code>manifest.js</code> — image, verse, prompt, style and seed are always tied together. Full audit trail in <code>runs.jsonl</code>.</div>
+</div>
+
+<script src="manifest.js"></script>
+<script>
+  const M = window.MANIFEST || [];
+  const byVerse = {};
+  for (const a of M) (byVerse[a.verse_key] ||= []).push(a);
+  const root = document.getElementById("root");
+
+  for (const vk of Object.keys(byVerse)) {
+    const items = byVerse[vk];
+    const v = items[0];
+    const naive = items.find(x => x.approach === "naive");
+    const skill = items.find(x => x.approach === "skill");
+
+    const block = document.createElement("div");
+    block.className = "verse-block";
+    block.innerHTML = `
+      <div class="verse-head">
+        <div class="zh">${v.verse_zh}</div>
+        <div class="en">${v.verse_en}</div>
+        <div class="meta">焦氏易林 Jiaoshi Yilin &middot; ${v.transition} &middot; verse ${v.verse_key}</div>
+      </div>
+      <div class="pair">
+        ${card(naive, "Before — naive prompt")}
+        ${card(skill, "After — verse-to-prompt")}
+      </div>`;
+    root.appendChild(block);
+  }
+
+  function card(a, label) {
+    if (!a) return "";
+    const cls = a.approach === "skill" ? "card skill" : "card";
+    const style = a.style ? `Style: ${a.style}` : "Literal translation + “…ink painting style”";
+    return `
+      <div class="${cls}">
+        <img src="${a.image}" alt="${a.id}">
+        <div class="tag">${label}</div>
+        <div class="style">${style}</div>
+        ${a.note ? `<div class="note">${a.note}</div>` : ""}
+        <div class="prompt">
+          <span class="lbl">Prompt</span>${a.prompt}
+          <div class="seed">seed ${a.seed} &middot; ${a.model}</div>
+        </div>
+      </div>`;
+  }
+</script>
+</body>
+</html>

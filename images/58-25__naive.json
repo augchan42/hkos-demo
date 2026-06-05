@@ -1,0 +1,17 @@
+{
+  "id": "58-25__naive",
+  "verse_key": "58-25",
+  "transition": "兌 Duì (Joyous Lake) -> 無妄 Wú Wàng (Innocence)",
+  "verse_zh": "結網得解，受福安坐，終无患禍。",
+  "verse_en": "The knotted net finds release; one receives blessing and sits at ease. In the end there is no trouble or calamity.",
+  "approach": "naive",
+  "style": null,
+  "note": "Latches onto the stray word 'net' and inverts the meaning (verse is about release/ease).",
+  "prompt": "The knotted net finds release; one receives blessing and sits at ease. In the end there is no trouble or calamity. Chinese ink painting style.",
+  "model": "fal-ai/z-image/turbo",
+  "seed": 410419,
+  "returned_seed": 410419,
+  "image": "images/58-25__naive.png",
+  "source_url": "https://v3b.fal.media/files/b/0a9d194b/4PHcOUtHZVaxdJfNubva__E4a28qeD.png",
+  "generated_at": "2026-06-06T00:43:53"
+}

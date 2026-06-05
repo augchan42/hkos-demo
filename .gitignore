@@ -1,0 +1,9 @@
+# never commit secrets
+.env
+.env.*
+*.key
+
+# tooling / scratch
+__pycache__/
+.playwright-mcp/
+demo-preview.png

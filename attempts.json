@@ -1,0 +1,63 @@
+{
+  "model": "fal-ai/z-image/turbo",
+  "image_size": "portrait_4_3",
+  "seed": 410419,
+  "verses": {
+    "41-19": {
+      "transition": "損 Sǔn (Decrease) -> 臨 Lín (Approach)",
+      "zh": "元吉无咎，安寧不殆。",
+      "en": "Supremely auspicious, without blame; peaceful and tranquil, free from peril."
+    },
+    "58-25": {
+      "transition": "兌 Duì (Joyous Lake) -> 無妄 Wú Wàng (Innocence)",
+      "zh": "結網得解，受福安坐，終无患禍。",
+      "en": "The knotted net finds release; one receives blessing and sits at ease. In the end there is no trouble or calamity."
+    },
+    "28-23": {
+      "transition": "大過 Dà Guò (Great Exceeding) -> 剝 Bō (Splitting Apart)",
+      "zh": "廓落失業，跨禍度福，利無所得。",
+      "en": "Vast and vacant, livelihood lost; straddling disaster, crossing toward fortune. Profit is nowhere to be found."
+    }
+  },
+  "attempts": [
+    {
+      "verse_key": "41-19",
+      "approach": "naive",
+      "note": "Literal English translation + style-as-suffix. No scene in the words.",
+      "prompt": "Supremely auspicious, without blame; peaceful and tranquil, free from peril. Chinese ink painting style."
+    },
+    {
+      "verse_key": "41-19",
+      "approach": "skill",
+      "style": "ink-landscape",
+      "note": "Auspicious tone -> calm shanshui. All 7 composition rules woven in.",
+      "prompt": "Through a weathered stone gate, mossy steps descend like pale brushstrokes toward a still valley. In the midground a lone figure in a vermillion robe crosses a low bridge over calm water that mirrors the sky like spilled silver. Pine boughs frame the upper edge; terraced hills fade into amber dawn mist behind. Chinese ink painting."
+    },
+    {
+      "verse_key": "58-25",
+      "approach": "naive",
+      "note": "Latches onto the stray word 'net' and inverts the meaning (verse is about release/ease).",
+      "prompt": "The knotted net finds release; one receives blessing and sits at ease. In the end there is no trouble or calamity. Chinese ink painting style."
+    },
+    {
+      "verse_key": "58-25",
+      "approach": "skill",
+      "style": "figures-in-mist",
+      "note": "Blessing and ease -> a human figure at rest. The released net becomes a calm detail, not the subject.",
+      "prompt": "Beneath a thatched eave framing the view, an old fisherman sits at ease on worn planks, a loosened net slack at his feet like unraveled ink threads. In the midground a calm inlet catches dawn light; a small boat drifts, its lantern a single amber spark. Reed banks and pale hills recede into mist beyond. Chinese ink painting."
+    },
+    {
+      "verse_key": "28-23",
+      "approach": "naive",
+      "note": "Wanders into a pleasant prosperous village -> tone is exactly backwards (verse is loss and emptiness).",
+      "prompt": "Vast and vacant, livelihood lost; straddling disaster, crossing toward fortune. Profit is nowhere to be found. Chinese ink painting style."
+    },
+    {
+      "verse_key": "28-23",
+      "approach": "skill",
+      "style": "atmospheric-night",
+      "note": "Loss and emptiness -> ominous tone -> atmospheric-night. The empty basket carries 'profit nowhere to be found'.",
+      "prompt": "Inside a ruined gateway framing a vast empty courtyard, a single lantern gutters against the dark like a dying ember. Foreground: cracked flagstones and an overturned empty basket. Midground: a lone figure crosses a narrow plank between two pools of shadow. Far off, faint cold hills dissolve into black mist. One vermillion seal glows on a leaning post. Chinese ink painting."
+    }
+  ]
+}
