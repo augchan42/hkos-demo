@@ -1,0 +1,17 @@
+{
+  "id": "41-19__tech-noir-v2",
+  "verse_key": "41-19",
+  "transition": "損 Sǔn (Decrease) -> 臨 Lín (Approach)",
+  "verse_zh": "元吉无咎，安寧不殆。",
+  "verse_en": "Supremely auspicious, without blame; peaceful and tranquil, free from peril.",
+  "approach": "tech-noir-v2",
+  "style": "datascape",
+  "note": "Auspicious tone -> datascape depth corridors. Stylized graphic treatment, not photoreal.",
+  "prompt": "Through a server-rack gateway, green wireframe grids recede into depth like data corridors. A lone figure at a curved console, hands at rest, phosphor scanlines washing across worn fingers. Cable bundles form a canopy above; cooling mist pours from vents, pooling like signal fog. One amber status LED blinks on a distant rack face. Phosphor-green tech-noir illustration, CRT scanlines, flat deep blacks, stylized graphic art, not photorealistic.",
+  "model": "fal-ai/z-image/turbo",
+  "seed": 410419,
+  "returned_seed": 410419,
+  "image": "images/41-19__tech-noir-v2.png",
+  "source_url": "https://v3b.fal.media/files/b/0a9d278a/4G0o-o9nAWk2RElJdCyKD_Zw9R1ifq.png",
+  "generated_at": "2026-06-06T10:52:32"
+}

@@ -1,0 +1,53 @@
+window.MANIFEST_TECH_NOIR = [
+  {
+    "id": "41-19__tech-noir",
+    "verse_key": "41-19",
+    "transition": "損 Sǔn (Decrease) -> 臨 Lín (Approach)",
+    "verse_zh": "元吉无咎，安寧不殆。",
+    "verse_en": "Supremely auspicious, without blame; peaceful and tranquil, free from peril.",
+    "approach": "tech-noir",
+    "style": "datascape",
+    "note": "Auspicious tone -> datascape depth corridors. All 7 composition rules in tech-noir vocabulary.",
+    "prompt": "Through a server-rack gateway, green wireframe grids recede into depth like data corridors. A lone figure at a curved console, hands at rest, phosphor scanlines washing across worn fingers. Cable bundles form a canopy above; cooling mist pours from vents, pooling like signal fog. One amber status LED blinks on a distant rack face. Phosphor-green tech-noir, CRT scanlines, deep blacks.",
+    "model": "fal-ai/z-image/turbo",
+    "seed": 410419,
+    "returned_seed": 410419,
+    "image": "images/41-19__tech-noir.png",
+    "source_url": "https://v3b.fal.media/files/b/0a9d2448/3shzE5n_UVDpgYslH3_Jv_IarMHO0F.png",
+    "generated_at": "2026-06-06T08:33:32"
+  },
+  {
+    "id": "58-25__tech-noir",
+    "verse_key": "58-25",
+    "transition": "兌 Duì (Joyous Lake) -> 無妄 Wú Wàng (Innocence)",
+    "verse_zh": "結網得解，受福安坐，終无患禍。",
+    "verse_en": "The knotted net finds release; one receives blessing and sits at ease. In the end there is no trouble or calamity.",
+    "approach": "tech-noir",
+    "style": "surveillance-feed",
+    "note": "Blessing and ease -> voyeuristic surveillance framing. The released net becomes a data cable.",
+    "prompt": "Through a rain-streaked window filmed by a dirty security camera, an old fisherman sits at ease on plastic crates by a concrete canal. A slack data cable curls at his feet like dark wire. A boat floats on black water reflecting sodium amber light; condensation softens the lens. Reed stalks sway as scan distortion. A green LED blinks on a junction box. Phosphor-green tech-noir, CRT scanlines, deep blacks.",
+    "model": "fal-ai/z-image/turbo",
+    "seed": 410419,
+    "returned_seed": 410419,
+    "image": "images/58-25__tech-noir.png",
+    "source_url": "https://v3b.fal.media/files/b/0a9d2449/Wli1bZGPkOiW4XPwW5PFh_vENq1czv.png",
+    "generated_at": "2026-06-06T08:33:40"
+  },
+  {
+    "id": "28-23__tech-noir",
+    "verse_key": "28-23",
+    "transition": "大過 Dà Guò (Great Exceeding) -> 剝 Bō (Splitting Apart)",
+    "verse_zh": "廓落失業，跨禍度福，利無所得。",
+    "verse_en": "Vast and vacant, livelihood lost; straddling disaster, crossing toward fortune. Profit is nowhere to be found.",
+    "approach": "tech-noir",
+    "style": "terminal-dark",
+    "note": "Loss and emptiness -> terminal-dark. The empty basket becomes a toppled chassis; profit nowhere becomes a dead signal.",
+    "prompt": "Inside a ruined server room doorway, an amber diagnostic light pulses through dust-choked darkness like a dying signal. Foreground: shattered tiles and a toppled empty chassis. Midground: a lone figure crosses a narrow catwalk over coolant pooling like dark data streams. Far off, rack silhouettes fade into static grain. One green cursor blinks on a cracked monitor. Phosphor-green tech-noir, CRT scanlines, deep blacks.",
+    "model": "fal-ai/z-image/turbo",
+    "seed": 410419,
+    "returned_seed": 410419,
+    "image": "images/28-23__tech-noir.png",
+    "source_url": "https://v3b.fal.media/files/b/0a9d244e/IOOiViqax52uwNOCvaRp4_zYLaZPe6.png",
+    "generated_at": "2026-06-06T08:33:48"
+  }
+];

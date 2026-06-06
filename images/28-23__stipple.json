@@ -1,0 +1,17 @@
+{
+  "id": "28-23__stipple",
+  "verse_key": "28-23",
+  "transition": "大過 Dà Guò (Great Exceeding) -> 剝 Bō (Splitting Apart)",
+  "verse_zh": "廓落失業，跨禍度福，利無所得。",
+  "verse_en": "Vast and vacant, livelihood lost; straddling disaster, crossing toward fortune. Profit is nowhere to be found.",
+  "approach": "stipple",
+  "style": "atmospheric-night",
+  "note": "Loss and emptiness -> atmospheric-night scene, stipple render. Matrix-skin finish on the dark composition.",
+  "prompt": "Inside a ruined gateway framing a vast empty courtyard, a single lantern gutters against the dark like a dying ember. Foreground: cracked flagstones and an overturned empty basket. Midground: a lone figure crosses a narrow plank between two pools of shadow. Far off, faint cold hills dissolve into black mist. One vermillion seal glows on a leaning post. Golden age science fiction stipple illustration, thousands of individual ink dots building luminous tonal gradients, figures emerging from darkness through pure pointillism technique, ethereal glowing quality, meticulous dot-work rendering every form, phosphor-green and amber palette on black.",
+  "model": "fal-ai/z-image/turbo",
+  "seed": 410419,
+  "returned_seed": 410419,
+  "image": "images/28-23__stipple.png",
+  "source_url": "https://v3b.fal.media/files/b/0a9d2791/fHgr9SZzBN8ygrWYvJJtY_Z9fKNbpC.png",
+  "generated_at": "2026-06-06T10:52:51"
+}

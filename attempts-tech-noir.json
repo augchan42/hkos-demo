@@ -1,0 +1,45 @@
+{
+  "model": "fal-ai/z-image/turbo",
+  "image_size": "portrait_4_3",
+  "seed": 410419,
+  "verses": {
+    "41-19": {
+      "transition": "損 Sǔn (Decrease) -> 臨 Lín (Approach)",
+      "zh": "元吉无咎，安寧不殆。",
+      "en": "Supremely auspicious, without blame; peaceful and tranquil, free from peril."
+    },
+    "58-25": {
+      "transition": "兌 Duì (Joyous Lake) -> 無妄 Wú Wàng (Innocence)",
+      "zh": "結網得解，受福安坐，終无患禍。",
+      "en": "The knotted net finds release; one receives blessing and sits at ease. In the end there is no trouble or calamity."
+    },
+    "28-23": {
+      "transition": "大過 Dà Guò (Great Exceeding) -> 剝 Bō (Splitting Apart)",
+      "zh": "廓落失業，跨禍度福，利無所得。",
+      "en": "Vast and vacant, livelihood lost; straddling disaster, crossing toward fortune. Profit is nowhere to be found."
+    }
+  },
+  "attempts": [
+    {
+      "verse_key": "41-19",
+      "approach": "tech-noir",
+      "style": "datascape",
+      "note": "Auspicious tone -> datascape depth corridors. All 7 composition rules in tech-noir vocabulary.",
+      "prompt": "Through a server-rack gateway, green wireframe grids recede into depth like data corridors. A lone figure at a curved console, hands at rest, phosphor scanlines washing across worn fingers. Cable bundles form a canopy above; cooling mist pours from vents, pooling like signal fog. One amber status LED blinks on a distant rack face. Phosphor-green tech-noir, CRT scanlines, deep blacks."
+    },
+    {
+      "verse_key": "58-25",
+      "approach": "tech-noir",
+      "style": "surveillance-feed",
+      "note": "Blessing and ease -> voyeuristic surveillance framing. The released net becomes a data cable.",
+      "prompt": "Through a rain-streaked window filmed by a dirty security camera, an old fisherman sits at ease on plastic crates by a concrete canal. A slack data cable curls at his feet like dark wire. A boat floats on black water reflecting sodium amber light; condensation softens the lens. Reed stalks sway as scan distortion. A green LED blinks on a junction box. Phosphor-green tech-noir, CRT scanlines, deep blacks."
+    },
+    {
+      "verse_key": "28-23",
+      "approach": "tech-noir",
+      "style": "terminal-dark",
+      "note": "Loss and emptiness -> terminal-dark. The empty basket becomes a toppled chassis; profit nowhere becomes a dead signal.",
+      "prompt": "Inside a ruined server room doorway, an amber diagnostic light pulses through dust-choked darkness like a dying signal. Foreground: shattered tiles and a toppled empty chassis. Midground: a lone figure crosses a narrow catwalk over coolant pooling like dark data streams. Far off, rack silhouettes fade into static grain. One green cursor blinks on a cracked monitor. Phosphor-green tech-noir, CRT scanlines, deep blacks."
+    }
+  ]
+}

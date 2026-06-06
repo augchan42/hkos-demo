@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>verse-to-prompt — tech-noir</title>
+<style>
+  :root { --bg:#0d0d0d; --paper:#111; --fg:#c9f0c9; --dim:#5a7a5a; --amber:#e8a840; --accent:#4caf50; --line:#2a3a2a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:1.25rem/1.6 ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace; }
+  .wrap { max-width:1280px; margin:0 auto; padding:48px 30px 90px; }
+  header { text-align:center; margin-bottom:6px; }
+  h1 { font-size:2.5rem; margin:0 0 14px; line-height:1.2; color:var(--accent);
+       text-shadow:0 0 30px rgba(76,175,80,.3); }
+  .sub { color:var(--dim); font-size:1.25rem; max-width:1000px; margin:0 auto; }
+  .sub code { background:#1a2a1a; padding:1px 6px; border-radius:4px; font-size:1.1rem; }
+  .verse-block { margin:56px 0 0; padding-top:38px; border-top:1px solid var(--line); }
+  .verse-head { text-align:center; margin-bottom:26px; }
+  .verse-head .zh { font-size:3rem; letter-spacing:.14em; line-height:1.3; color:var(--fg); }
+  .verse-head .en { color:var(--dim); font-style:italic; font-size:1.5rem; margin-top:10px; }
+  .verse-head .meta { color:var(--dim); font-size:1.25rem; margin-top:10px; letter-spacing:.03em; }
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .card { background:var(--paper); border:1px solid var(--line); border-radius:12px; overflow:hidden;
+          box-shadow:0 6px 20px rgba(0,20,0,.15); display:flex; flex-direction:column; }
+  .card img { width:100%; display:block; aspect-ratio:3/4; object-fit:cover; background:#0a0a0a; }
+  .tag { font-size:1.25rem; letter-spacing:.1em; text-transform:uppercase; padding:18px 22px 0; color:var(--dim); }
+  .card.tech-noir .tag { color:var(--accent); }
+  .style { font-size:1.6rem; font-weight:600; padding:6px 22px 0; color:var(--amber); }
+  .note { font-size:1.25rem; color:var(--dim); padding:10px 22px 0; }
+  .prompt { font-size:1.25rem; color:var(--fg); padding:14px 22px 22px; line-height:1.55; margin-top:auto; }
+  .prompt .lbl { display:block; font-size:1.25rem; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:6px; }
+  .prompt .seed { color:var(--dim); font-size:1.25rem; margin-top:12px; }
+  .foot { text-align:center; color:var(--dim); font-size:1.25rem; margin-top:56px; }
+  @media (max-width:760px){ .pair{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>One verse, two skins — ink vs. tech-noir</h1>
+    <div class="sub">Inkstone <code>/verse-to-prompt</code> &middot; model <code>fal-ai/z-image/turbo</code> &middot; <strong>same model, same seed</strong> for every image — the prompt is the only variable</div>
+    <div class="sub" style="margin-top:8px">Ink painting (skill) on the left, <strong>tech-noir</strong> on the right. The same 7 composition rules, rendered through two different visual registers.</div>
+  </header>
+  <div id="root"></div>
+  <div class="foot">Ink painting images from <code>manifest.js</code>, tech-noir images from <code>manifest-tech-noir.js</code>.</div>
+</div>
+
+<script src="manifest.js"></script>
+<script src="manifest-tech-noir.js"></script>
+<script>
+  const ink = window.MANIFEST || [];
+  const noir = window.MANIFEST_TECH_NOIR || [];
+  const byVerse = {};
+  for (const a of ink) (byVerse[a.verse_key] ||= []).push(a);
+  for (const a of noir) (byVerse[a.verse_key] ||= []).push(a);
+  const root = document.getElementById("root");
+
+  for (const vk of Object.keys(byVerse)) {
+    const items = byVerse[vk];
+    const v = items[0];
+    const skill = items.find(x => x.approach === "skill");
+    const techNoirItem = items.find(x => x.approach === "tech-noir");
+
+    const block = document.createElement("div");
+    block.className = "verse-block";
+    block.innerHTML = `
+      <div class="verse-head">
+        <div class="zh">${v.verse_zh}</div>
+        <div class="en">${v.verse_en}</div>
+        <div class="meta">焦氏易林 Jiaoshi Yilin &middot; ${v.transition} &middot; verse ${v.verse_key}</div>
+      </div>
+      <div class="pair">
+        ${card(skill, "Ink painting (skill)")}
+        ${card(techNoirItem, "Tech-noir")}
+      </div>`;
+    root.appendChild(block);
+  }
+
+  function card(a, label) {
+    if (!a) return "";
+    const cls = a.approach === "tech-noir" ? "card tech-noir" : "card";
+    return `
+      <div class="${cls}">
+        <img src="${a.image}" alt="${a.id}">
+        <div class="tag">${label}</div>
+        <div class="style">Style: ${a.style}</div>
+        ${a.note ? `<div class="note">${a.note}</div>` : ""}
+        <div class="prompt">
+          <span class="lbl">Prompt</span>${a.prompt}
+          <div class="seed">seed ${a.seed} &middot; ${a.model}</div>
+        </div>
+      </div>`;
+  }
+</script>
+</body>
+</html>
